@@ -8,16 +8,20 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #1a3c5e;
+      --primary: #58a6ff;
       --accent: #e8a020;
-      --light: #f4f7fb;
-      --text: #2d3748;
-      --muted: #718096;
+      --light: #161b22;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #21262d;
+      --border: #30363d;
     }
 
     body {
       font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-      background: var(--light);
+      background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
     }
@@ -177,12 +181,12 @@
     .section-title {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--text);
       margin-bottom: 3rem;
     }
 
     /* ── About ── */
-    .about-bg { background: #fff; }
+    .about-bg { background: var(--surface); }
 
     .about-grid {
       display: grid;
@@ -191,16 +195,19 @@
     }
 
     .about-card {
-      background: var(--light);
+      background: var(--surface2);
       border-radius: 16px;
       padding: 2rem;
       border-left: 4px solid var(--accent);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .about-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
     }
 
     .about-card-icon { font-size: 2rem; margin-bottom: 1rem; }
@@ -208,7 +215,7 @@
     .about-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
 
     /* ── Expertise ── */
-    .expertise-bg { background: var(--light); }
+    .expertise-bg { background: var(--bg); }
 
     .expertise-grid {
       display: grid;
@@ -217,35 +224,37 @@
     }
 
     .expertise-card {
-      background: #fff;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2rem 1.5rem;
       text-align: center;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
       cursor: default;
     }
 
     .expertise-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(26,60,94,0.12);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      border-color: var(--primary);
     }
 
     .expertise-icon {
       width: 64px; height: 64px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), #2a5a8e);
+      background: linear-gradient(135deg, #1c3a5e, #2a5080);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.8rem;
       margin: 0 auto 1rem;
-      box-shadow: 0 4px 16px rgba(26,60,94,0.3);
+      box-shadow: 0 4px 16px rgba(88,166,255,0.2);
     }
 
     .expertise-card h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; }
     .expertise-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
 
     /* ── Skills ── */
-    .skills-bg { background: #fff; }
+    .skills-bg { background: var(--surface); }
 
     .skill-list { display: flex; flex-direction: column; gap: 1.2rem; }
 
@@ -256,12 +265,12 @@
       margin-bottom: 0.4rem;
     }
 
-    .skill-name { font-size: 0.9rem; font-weight: 600; color: var(--primary); }
+    .skill-name { font-size: 0.9rem; font-weight: 600; color: var(--text); }
     .skill-pct { font-size: 0.85rem; color: var(--accent); font-weight: 700; }
 
     .skill-bar {
       height: 8px;
-      background: #e2e8f0;
+      background: var(--surface2);
       border-radius: 4px;
       overflow: hidden;
     }
@@ -275,7 +284,7 @@
     }
 
     /* ── Tech ── */
-    .tech-bg { background: var(--light); }
+    .tech-bg { background: var(--bg); }
 
     .tech-chips {
       display: flex; flex-wrap: wrap; gap: 1rem;
@@ -283,14 +292,14 @@
 
     .tech-chip {
       display: flex; align-items: center; gap: 0.5rem;
-      background: #fff;
-      border: 2px solid transparent;
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 0.7rem 1.2rem;
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--primary);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
       transition: all 0.3s;
       cursor: default;
     }
@@ -299,6 +308,7 @@
       border-color: var(--accent);
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(232,160,32,0.2);
+      color: var(--accent);
     }
 
     .tech-chip span:first-child { font-size: 1.4rem; }
